@@ -64,7 +64,8 @@ const restaurantList = [
       city: "21",
       area: "Athwa",
       totalRatingsString: "1000+ ratings",
-      cloudinaryImageId: "bz9zkh2aqywjhpankb07",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Pizzas"],
       tags: [],
       costForTwo: 40000,
@@ -184,7 +185,8 @@ const restaurantList = [
       city: "21",
       area: "althan bhatar",
       totalRatingsString: "100+ ratings",
-      cloudinaryImageId: "ldtibwymvzehvmdwl8la",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Desserts", "Ice Cream", "Healthy Food"],
       tags: [],
       costForTwo: 20000,
@@ -304,7 +306,8 @@ const restaurantList = [
       city: "21",
       area: "Athwa",
       totalRatingsString: "500+ ratings",
-      cloudinaryImageId: "nyp7yrzwc1dc2xqfkydk",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Ice Cream"],
       tags: [],
       costForTwo: 25000,
@@ -424,7 +427,8 @@ const restaurantList = [
       city: "21",
       area: "Nanpura",
       totalRatingsString: "100+ ratings",
-      cloudinaryImageId: "spd3y5gok3vvwqulgmda",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Ice Cream", "Juices", "Desserts", "Beverages"],
       tags: [],
       costForTwo: 20000,
@@ -544,7 +548,8 @@ const restaurantList = [
       city: "21",
       area: "Nanpura",
       totalRatingsString: "50+ ratings",
-      cloudinaryImageId: "bvr70adr30ejyr5ua79k",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Pizzas"],
       tags: [],
       costForTwo: 30000,
@@ -664,7 +669,8 @@ const restaurantList = [
       city: "21",
       area: "Athwa",
       totalRatingsString: "1000+ ratings",
-      cloudinaryImageId: "oxsb5mr1xsmhnxhunjsc",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Chinese", "North Indian", "Biryani"],
       tags: [],
       costForTwo: 2000,
@@ -784,7 +790,8 @@ const restaurantList = [
       city: "21",
       area: "Adajan",
       totalRatingsString: "20+ ratings",
-      cloudinaryImageId: "agkm7cflq72tkualhstb",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Fast Food", "Pizzas", "Snacks", "Beverages"],
       tags: [],
       costForTwo: 20000,
@@ -903,7 +910,8 @@ const restaurantList = [
       city: "21",
       area: "Piplod",
       totalRatingsString: "Too Few Ratings",
-      cloudinaryImageId: "jegpumsjcmomksbr2sxr",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Desserts", "Ice Cream"],
       tags: [],
       costForTwo: 15000,
@@ -1023,7 +1031,8 @@ const restaurantList = [
       city: "21",
       area: "Piplod",
       totalRatingsString: "100+ ratings",
-      cloudinaryImageId: "wzbo5xivr8hstl0vxzcm",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
       tags: [],
       costForTwo: 50000,
@@ -1144,7 +1153,8 @@ const restaurantList = [
       city: "21",
       area: "Adajan Patiya",
       totalRatingsString: "1000+ ratings",
-      cloudinaryImageId: "craozjakzx7sll2uracb",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: [
         "Biryani",
         "Mughlai",
@@ -1273,7 +1283,8 @@ const restaurantList = [
       city: "21",
       area: "Piplod",
       totalRatingsString: "Too Few Ratings",
-      cloudinaryImageId: "vmold2zualdrrypxcvue",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Fast Food"],
       tags: [],
       costForTwo: 20000,
@@ -1393,7 +1404,8 @@ const restaurantList = [
       city: "21",
       area: "Chowk Bazar",
       totalRatingsString: "5000+ ratings",
-      cloudinaryImageId: "kilrdjqt8chduasii5ni",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["North Indian", "Biryani"],
       tags: [],
       costForTwo: 30000,
@@ -1513,7 +1525,8 @@ const restaurantList = [
       city: "21",
       area: "Adajan",
       totalRatingsString: "10000+ ratings",
-      cloudinaryImageId: "84d3bea985f13bd980dc39c9c73bc87f",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Desserts", "Chinese", "South Indian", "Ice Cream", "Pizzas"],
       tags: [],
       costForTwo: 25000,
@@ -1633,7 +1646,8 @@ const restaurantList = [
       city: "21",
       area: "Galaxy Circle",
       totalRatingsString: "50+ ratings",
-      cloudinaryImageId: "mnvfpsoealkflze4e5qi",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: ["Bakery"],
       tags: [],
       costForTwo: 27000,
@@ -1752,7 +1766,8 @@ const restaurantList = [
       city: "21",
       area: "Piplod",
       totalRatingsString: "Too Few Ratings",
-      cloudinaryImageId: "fda9ad56b9d62070fec105cd93693129",
+      cloudinaryImageId:
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vtdmhz9cd27mqgxnpkim",
       cuisines: [
         "Cafe",
         "Fast Food",
@@ -1883,12 +1898,7 @@ const RestaurantCard = ({
 }) => {
   return (
     <div className="card">
-      <img
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy" +
-          cloudinaryImageId
-        }
-      />
+      <img src={cloudinaryImageId} />
       <h2>{name}</h2>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{area}</h4>
@@ -1923,8 +1933,8 @@ const Footer = () => {
     <div className="footer">
       Created By
       <i class="fa-solid fa-heart"></i>
-      <a href="https://www.linkedin.com/in/chetannada/" target="_blank">
-        Chetan Nada
+      <a href="https://www.linkedin.com/in/rathashutosh/" target="_blank">
+        Ashutosh Rath
       </a>
       <i class="fa-solid fa-copyright"></i>
       {year}
