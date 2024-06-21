@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Title = () => (
   <a href="/">
     <img
@@ -9,6 +11,7 @@ const Title = () => (
 );
 
 const Header = () => {
+  const [auth, setAuth] = useState("Login");
   return (
     <div className="header">
       <Title />
@@ -21,6 +24,14 @@ const Header = () => {
             <i class="fa-solid fa-cart-shopping"></i>
           </li>
         </ul>
+        <button
+          type="text"
+          onClick={() => {
+            auth === "Login" ? setAuth("Logout") : setAuth("Login");
+          }}
+        >
+          {auth}
+        </button>
       </div>
     </div>
   );
