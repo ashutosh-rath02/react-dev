@@ -1,74 +1,87 @@
-import restaurantList from "../utils/constants";
-import RestaurantCard from "./RestaurantCard";
+import Restaurantcard from "./Restaurantcard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
-const Body = () => {
-  const [listofRestaurants, setListofRestaurants] = useState(restaurantList);
-  const [filtered, setFiltered] = useState(false);
+//Body Component
+const BodyComponent = () => {
+  const [listofRestaurants, setlistofRestaurants] = useState([]);
+  const [filteredlistofRestaurants, setfilteredlistofRestaurants] = useState(
+    []
+  );
   const [searchText, setSearchText] = useState("");
-  const [filteredRestaurants, setFilteredRestaurants] =
-    useState(restaurantList);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.25318665808527&lng=84.90334937367797&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-  //   );
-  //   const jsonData = data.json();
-  //   console.log(jsonData);
-  // };
-
-  const toggleFilter = () => {
-    if (filtered) {
-      setFilteredRestaurants(
-        restaurantList.filter((res) => res.data.avgRating > 4)
-      );
-    } else {
-      setFilteredRestaurants(restaurantList);
-    }
-    setFiltered(!filtered);
-  };
-
-  const handleSearch = () => {
-    const filteredData = listofRestaurants.filter((restaurant) =>
-      restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9265132&lng=77.63615519999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    setFilteredRestaurants(filteredData);
+    //const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.974938146071992&lng=77.52763834497807&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    console.log(
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants.info
+    );
+    setlistofRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredlistofRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   return listofRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search a restaurant you want..."
-          value={searchText}
-          // update the state variable searchText when we typing in input box
-          onChange={(e) => setSearchText(e.target.value)}
-        />
-        <button className="search-btn" onClick={handleSearch}>
-          Search
+    <div>
+      <div className="filter">
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const matchedres = listofRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              // if (matchedres.length===0){
+              //     setfilteredlistofRestaurants([]);
+              //     return(<h1>No Results Found</h1>)
+              // }
+              setfilteredlistofRestaurants(matchedres);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <button
+          className="btn-filter"
+          onClick={() => {
+            const filteredres = listofRestaurants.filter(
+              (res) => res.info.avgRating > 4.3
+            );
+            setfilteredlistofRestaurants(filteredres);
+          }}
+        >
+          Filter Top Rated Restaurants{" "}
         </button>
       </div>
-      <button type="button" className="filter-btn" onClick={toggleFilter}>
-        Top Rated Restaurants
-      </button>
       <div className="restaurant-list">
-        {filteredRestaurants.map((restaurant) => {
-          return (
-            <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
-          );
-        })}
+        {filteredlistofRestaurants.map((restaurant) => (
+          <Link to={"/restaurants/" + restaurant.info.id}>
+            <Restaurantcard key={restaurant.info.id} resData={restaurant} />
+          </Link> // returning JSX inside map by looping over restraunts
+        ))}
       </div>
     </div>
   );
 };
-
-export default Body;
+export default BodyComponent;
