@@ -1,7 +1,10 @@
 /* Font family */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Select all CSS Start*/
+/* Select all CSS Start
 * {
   margin: 0;
   padding: 0;
@@ -11,14 +14,11 @@
 }
 
 /* all link CSS */
-a {
+/* a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Select all CSS End*/
-
-/* create global variable with :root selector Start*/
 :root {
   --header-bg-color: rgb(1, 163, 144);
   --footer-bg-color: rgb(1, 163, 144);
@@ -38,9 +38,7 @@ a {
   --light-blue: #0463ac;
   --dark-blue: #070062;
 }
-/* create global variable with :root selector End*/
 
-/* Header CSS Start*/
 
 .header {
   display: flex;
@@ -66,7 +64,6 @@ a {
   width: 100px;
 }
 
-/* nav items CSS start*/
 .nav-items > ul {
   list-style-type: none;
   display: flex;
@@ -96,17 +93,11 @@ a {
   cursor: pointer;
 }
 
-/* nav items CSS End*/
-
-/* Header CSS End*/
 .container {
   max-width: 1200px;
   margin: 10rem auto;
 }
 
-/* Body CSS Start*/
-
-/* search container CSS Start*/
 .search-container {
   margin: 100px auto 20px;
   text-align: center;
@@ -144,17 +135,11 @@ a {
   background-color: var(--dark-green);
 }
 
-/* Search error message css Start*/
 .error-container {
   text-align: center;
   font-size: large;
   margin: 20px 0;
 }
-/* Search error message css End*/
-
-/* search container CSS End*/
-
-/* Restaurant cards CSS Start*/
 .restaurant-list {
   width: auto;
   display: flex;
@@ -225,10 +210,7 @@ a {
   object-fit: cover;
   border-radius: 10%;
 }
-/* .res-info {
-  height: 100px;
-  overflow: auto;
-} */
+
 .res-card h4 {
   margin: 15px 0 0;
 }
@@ -238,9 +220,6 @@ a {
   margin: 10px 0 0;
 }
 
-/* Restaurant cards CSS End*/
-
-/* Restaurant Menu CSS Start */
 .restaurant-menu {
   margin-top: 80px;
   min-height: 80vh;
@@ -382,9 +361,6 @@ a {
   border-radius: 5px;
 }
 
-/* Restaurant Menu End Start */
-
-/*Shimmer Card CSS Start*/
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
@@ -414,9 +390,6 @@ a {
   height: 144px;
   width: 230px;
 }
-/*Shimmer Card CSS End*/
-
-/* Shimmer Menu Card CSS Start */
 
 .restaurant-summary .shimmer-img {
   height: 144px;
@@ -469,9 +442,6 @@ a {
   width: 20%;
   margin-top: 4px;
 }
-/* Shimmer Menu Card CSS End */
-
-/*Animation to Shimmer Component Card and Menu card Start*/
 .stroke {
   height: 15px;
   background: #777;
@@ -493,11 +463,6 @@ a {
     background-position: 1000px 0;
   }
 }
-/*Animation to Shimmer Component Card and Menu card End*/
-
-/* Body CSS End*/
-
-/* Error page CSS Start */
 .error-page {
   text-align: center;
   background-color: var(--body-bg-color);
@@ -523,9 +488,6 @@ a {
   background-color: var(--dark-green);
 }
 
-/* Error page CSS End */
-
-/* About us page CSS Start */
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -563,9 +525,6 @@ a {
   padding-right: 70px;
 }
 
-/* About us page CSS End */
-
-/* Contact us page CSS Start */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -625,9 +584,6 @@ a {
   background-color: var(--dark-green);
 }
 
-/* Contact us page CSS End */
-
-/* Login page CSS Start */
 .login-container {
   width: 380px;
   margin: 40px auto 0;
@@ -691,9 +647,7 @@ a {
   font-size: 13px;
   color: red;
 }
-/* Login page CSS End */
 
-/* footer CSS Start*/
 .footer {
   margin: 10px;
   width: auto;
@@ -730,9 +684,6 @@ a {
   color: var(--x-dark-orange);
 }
 
-/* footer CSS End*/
-
-/* CSS for mobile devices */
 
 @media only screen and (max-width: 1100px) {
   .about-container .about-left h1 {
@@ -846,4 +797,4 @@ a {
   font-size: 13px;
   color: #7e808c;
   margin: 10px 0;
-}
+} */
