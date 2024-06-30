@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Title = () => (
   <a href="/">
@@ -15,6 +16,8 @@ const Title = () => (
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   // use useState for user logged in or logged out
+
+  const { loggedInUser } = useContext(UserContext);
   const [isLoggedin, setIsLoggedin] = useState(true);
   const navigate = useNavigate();
   return (
@@ -35,8 +38,8 @@ const Header = () => {
           <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
-            Cart
+          <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center font-bold">
+            {loggedInUser}
           </li>
           <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
             {/* use conditional rendering for login and logout */}

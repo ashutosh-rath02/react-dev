@@ -2,7 +2,7 @@ const RES_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 //restaurant card component
-const Restaurantcard = (props) => {
+const RestaurantCard = (props) => {
   //const Rescard = ({resName,cuisins}) => {}
   const { resData } = props;
   const {
@@ -37,4 +37,22 @@ const Restaurantcard = (props) => {
     </div>
   );
 };
-export default Restaurantcard;
+
+// Higher Order Component
+
+// input- RestaurantCard ==> RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Open
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
+export default RestaurantCard;

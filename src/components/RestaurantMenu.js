@@ -2,45 +2,92 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
-  const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0); //for expanding accordian
+  const { resId } = useParams(); //call useParam to get value of restaurant Id(resId) using object destructuring.
 
-  if (resInfo === null) {
-    return <Shimmer />;
-  }
+  //fetching restaurant info from custom hook (useRestaurantMenu)
+  const resMenu = useRestaurantMenu(resId);
 
-  const { name, cuisines, costForTwoMessage, avgRating, areaName } =
-    resInfo?.cards[2]?.card?.card?.info;
-  const itemCards =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
-      ?.itemCards;
+  if (resMenu === null) return <Shimmer />;
+
+  //destructuring the restaurant's menu details
+  const {
+    name,
+    cuisines,
+    costForTwoMessage,
+    locality,
+    avgRating,
+    totalRatingsString,
+  } = resMenu?.cards[2]?.card?.card?.info;
+
+  //order delivery details
+  // const { deliveryTime } = resMenu?.cards[2]?.card?.card?.info.sla;
+
+  //menu
+  // const { itemCards } =
+  //   resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+
+  //filtering categories
+  const categories =
+    resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log(resMenu.cards);
+
   return (
-    <div className="container res-fex menu-page">
-      <h3>{name}</h3>
-      <div className="res-fex1">
+    <section className="w-9/12 mx-auto text-center">
+      <div className="m-4 p-4 text-left flex flex-wrap justify-between">
         <div>
-          <p>{cuisines.join(", ")}</p>
-          <p>{costForTwoMessage}</p>
+          <h1 className="font-bold my-4 text-4xl text-black">{name}</h1>
+          <p className="text-lg text-slate-500">{cuisines.join(", ")} </p>
+          <p className="text-lg text-slate-500">{locality}</p>
         </div>
-        <div>
-          <p>{avgRating}&#9733;</p>
-          <p>{areaName}</p>
+        <div className="border-1 border-x-2 border-y-2 p-2 h-20 mt-8 rounded-lg">
+          <h2 className="pt-1 text-lg text-green-700 font-bold border-dashed border-b-2">
+            ⭐{avgRating}
+          </h2>
+          <h4 className="pt-1 text-xs text-slate-500">{totalRatingsString}</h4>
         </div>
       </div>
-      <div>
-        {/* <h4>{category}</h4> */}
-        <ul>
-          {itemCards?.map((item) => (
-            <li key={item.card.info.id}>
-              {item.card.info.name} - Rs.
-              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-            </li>
-          ))}
-        </ul>
+      <div className="border-dashed border-t-2 flex m-4 p-4">
+        {/* <h3 className="pt-1 text-lg text-slate-800 font-bold">
+          🕗{deliveryTime} mins
+        </h3> */}
+        <p className="pt-1 pl-3 text-lg text-slate-800 font-bold">
+          💵{costForTwoMessage}
+        </p>
       </div>
-    </div>
+      <section className="my-8">
+        {/* Categories accordian */}
+        {categories.map((category, index) => (
+          /*
+                  Controlled Component
+                  --------------------
+                  RestaurantCategory(Child component) is a controlled component, 
+                  it will expand the accordian only when it's clicked, 
+                  rest accordians are collapsed based upon RestaurantMenu which is a parent component.
+                  */
+          <RestaurantCategory
+            key={category?.card?.card.title}
+            data={category?.card.card}
+            //expand the items only when we clicked, other accordians should be hided.
+            showItems={index === showIndex ? true : false}
+            /*
+                      Lifting state up
+                      -----------------
+                      passing the function to set the index value in child component.
+                      */
+            setShowIndex={() => setShowIndex(index)}
+          />
+        ))}
+      </section>
+    </section>
   );
 };
+
 export default RestaurantMenu;

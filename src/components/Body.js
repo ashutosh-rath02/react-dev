@@ -1,8 +1,9 @@
-import Restaurantcard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import Restaurantcard, { withPromotedLabel } from "./RestaurantCard";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 //Body Component
 const BodyComponent = () => {
@@ -11,6 +12,8 @@ const BodyComponent = () => {
     []
   );
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(Restaurantcard);
 
   useEffect(() => {
     fetchData();
@@ -22,9 +25,9 @@ const BodyComponent = () => {
     );
     //const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.974938146071992&lng=77.52763834497807&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-    console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants.info
-    );
+    // console.log(
+    //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants.info
+    // );
     setlistofRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -43,7 +46,9 @@ const BodyComponent = () => {
     );
   }
 
-  return listofRestaurants.length === 0 ? (
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
+  return listofRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div>
@@ -60,7 +65,7 @@ const BodyComponent = () => {
           <button
             className="p-2.5 bg-blue-600 text-white rounded-md"
             onClick={() => {
-              const matchedres = listofRestaurants.filter((res) =>
+              const matchedres = listofRestaurants?.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               // if (matchedres.length===0){
@@ -72,11 +77,18 @@ const BodyComponent = () => {
           >
             Search
           </button>
+          <div>
+            <label value={loggedInUser}>Username:</label>
+            <input
+              className="border border-black"
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
         </div>
         <button
           className="bg-gray-400 text-white p-2 ml-2 rounded-md hover:bg-gray-500"
           onClick={() => {
-            const filteredres = listofRestaurants.filter(
+            const filteredres = listofRestaurants?.filter(
               (res) => res.info.avgRating > 4.3
             );
             setfilteredlistofRestaurants(filteredres);
@@ -86,9 +98,13 @@ const BodyComponent = () => {
         </button>
       </div>
       <div className="flex flex-wrap w-full gap-2">
-        {filteredlistofRestaurants.map((restaurant) => (
+        {filteredlistofRestaurants?.map((restaurant) => (
           <Link to={"/restaurants/" + restaurant.info.id}>
-            <Restaurantcard key={restaurant.info.id} resData={restaurant} />
+            {restaurant?.info?.isOpen ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <Restaurantcard key={restaurant.info.id} resData={restaurant} />
+            )}
           </Link> // returning JSX inside map by looping over restraunts
         ))}
       </div>
