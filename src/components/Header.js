@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => (
   <a href="/">
@@ -19,6 +20,11 @@ const Header = () => {
 
   const { loggedInUser } = useContext(UserContext);
   const [isLoggedin, setIsLoggedin] = useState(true);
+
+  // Subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cartItemsHeader", cartItems);
+
   const navigate = useNavigate();
   return (
     <div className="flex justify-between">
@@ -37,6 +43,9 @@ const Header = () => {
 
           <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
             <Link to="/contact">Contact</Link>
+          </li>
+          <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
+            <Link to="/cart">Cart({cartItems.length} items)</Link>
           </li>
           <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center font-bold">
             {loggedInUser}
