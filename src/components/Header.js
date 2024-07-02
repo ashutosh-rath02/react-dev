@@ -19,7 +19,7 @@ const Header = () => {
   // use useState for user logged in or logged out
 
   const { loggedInUser } = useContext(UserContext);
-  const [isLoggedin, setIsLoggedin] = useState(true);
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
   // Subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
@@ -53,14 +53,15 @@ const Header = () => {
           <li className="hover:font-medium px-2 rounded-xl flex items-center justify-center">
             {/* use conditional rendering for login and logout */}
             {isLoggedin ? (
-              <button
-                className="logout-btn"
-                onClick={() => setIsLoggedin(false)}
-              >
+              <button className="Logout" onClick={() => setIsLoggedin(false)}>
                 Logout
               </button>
             ) : (
-              <button className="login-btn" onClick={() => navigate("/login")}>
+              <button
+                className="Login"
+                onClick={() => navigate("/login")}
+                aria-label="Login"
+              >
                 Login
               </button>
             )}

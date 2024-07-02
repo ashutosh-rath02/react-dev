@@ -1,0 +1,196 @@
+{
+  "id": "376708",
+  "name": "Chinese Wok",
+  "city": "Bangalore",
+  "slugs": {
+    "restaurant": "chinese-wok-(wok-express)-hsr-hsr",
+    "city": "bangalore"
+  },
+  "uniqueId": "e51e6528-4859-48c8-8fed-e84c17dc2d76",
+  "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
+  "locality": "3rd Sector",
+  "areaName": "HSR Layout",
+  "costForTwo": "25000",
+  "costForTwoMessage": "₹250 for two",
+  "cuisines": ["Chinese", "Asian"],
+  "avgRating": 4.1,
+  "feeDetails": {
+    "restaurantId": "376708",
+    "fees": [
+      {
+        "name": "TYPE_DISTANCE",
+        "fee": 3800
+      },
+      {
+        "name": "TYPE_TIME"
+      }
+    ],
+    "totalFee": 3800,
+    "title": "Delivery Charge",
+    "amount": "3800",
+    "icon": "v1648635511/Delivery_fee_new_cjxumu",
+    "message": "<b>2.4 kms</b> | ₹38 Delivery fee will apply"
+  },
+  "parentId": "61955",
+  "avgRatingString": "4.1",
+  "totalRatingsString": "5K+ ratings",
+  "sla": {
+    "restaurantId": "376708",
+    "deliveryTime": 34,
+    "minDeliveryTime": 30,
+    "maxDeliveryTime": 35,
+    "lastMileTravel": 2.4,
+    "serviceability": "SERVICEABLE",
+    "stressFactor": 1,
+    "rainMode": "RAIN_MODE_LIGHT",
+    "longDistance": "LONG_DISTANCE_NOT_LONG_DISTANCE",
+    "zoneId": 3,
+    "slaString": "30-35 MINS",
+    "lastMileTravelString": "2.4 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2024-07-03 02:00:00",
+    "visibility": true,
+    "opened": true,
+    "restaurantClosedMeta": {}
+  },
+  "aggregatedDiscountInfo": {
+    "header": "Get items under 149",
+    "shortDescriptionList": [
+      {
+        "meta": "Get items under 149",
+        "discountType": "FinalPrice",
+        "operationType": "RESTAURANT"
+      },
+      {
+        "meta": "50% off | Use TRYNEW",
+        "discountType": "Percentage",
+        "operationType": "RESTAURANT"
+      }
+    ],
+    "descriptionList": [
+      {
+        "meta": "Get items under 149",
+        "discountType": "FinalPrice",
+        "operationType": "RESTAURANT"
+      },
+      {
+        "meta": "50% off up to ₹100 | Use code TRYNEW",
+        "discountType": "Percentage",
+        "operationType": "RESTAURANT"
+      }
+    ],
+    "visible": true
+  },
+  "badges": {},
+  "slugString": "chinese-wok-(wok-express)-hsr-hsr",
+  "multiOutlet": true,
+  "isOpen": true,
+  "labels": [
+    {
+      "title": "Timings",
+      "message": "null"
+    },
+    {
+      "title": "Address",
+      "message": "NO.1212, KATHA NO.688/1212, GROUND FLOOR, SECTOR-III, HOSUR SARJAPUR ROAD, HSR LAYOUT, BANGALORE ,BTM Layout ,B.B.M.P South,Karnataka-560102"
+    },
+    {
+      "title": "Cuisines",
+      "message": "Chinese,Asian"
+    }
+  ],
+  "totalRatings": 5000,
+  "aggregatedDiscountInfoV2": {
+    "header": "Get items under 149",
+    "shortDescriptionList": [
+      {
+        "meta": "Get items under 149",
+        "discountType": "FinalPrice",
+        "operationType": "RESTAURANT"
+      },
+      {
+        "meta": "50% off | Use TRYNEW",
+        "discountType": "Percentage",
+        "operationType": "RESTAURANT"
+      }
+    ],
+    "descriptionList": [
+      {
+        "meta": "Get items under 149",
+        "discountType": "FinalPrice",
+        "operationType": "RESTAURANT"
+      },
+      {
+        "meta": "50% off up to ₹100 | Use code TRYNEW",
+        "discountType": "Percentage",
+        "operationType": "RESTAURANT"
+      }
+    ],
+    "couponDetailsCta": "View coupon details"
+  },
+  "type": "F",
+  "nudgeBanners": [
+    {
+      "priority": 1,
+      "discountInfo": {
+        "discountType": "FinalPrice",
+        "value": 149
+      },
+      "unlockedMessage": "Deal of the Day unlocked!",
+      "minItemCount": 1,
+      "maxItemCount": 1,
+      "type": "SILD",
+      "nudgeTagInfo": {
+        "title": "Deal of the Day",
+        "fontName": "FONT_NAME_CONDENSED_BOLD"
+      },
+      "logoCtx": {}
+    }
+  ],
+  "headerBanner": {
+    "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/376708"
+  },
+  "expectationNotifiers": [
+    {
+      "text": "<b>2.4 kms</b> | ₹38 Delivery fee will apply",
+      "icon": {
+        "imageId": "v1648635511/Delivery_fee_new_cjxumu"
+      },
+      "popup": {
+        "cta": {}
+      },
+      "type": "DISTANCE_FEE_NON_FOOD_LM",
+      "enrichedText": "<b>2.4 kms</b> | ₹38 Delivery fee will apply",
+      "halfCardPopup": {
+        "halfCardPopupHeader": {}
+      },
+      "trailingIcon": {}
+    }
+  ],
+  "generalPurposeInfoListV2": [
+    {
+      "cta": {
+        "info": {
+          "recordings": {}
+        },
+        "linkCta": {}
+      }
+    }
+  ],
+  "ratingSlab": "RATING_SLAB_5",
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "hasBestsellerItems": true,
+  "cartOrderabilityNudgeBanner": {
+    "parameters": {},
+    "presentation": {}
+  },
+  "latLong": "12.9093,77.638701",
+  "backgroundImageOverlayInfo": {}
+}

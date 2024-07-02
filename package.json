@@ -23,12 +23,21 @@
   },
   "homepage": "https://github.com/ashutoshrath02/namastereact#readme",
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@testing-library/react": "^16.0.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.12.0",
     "process": "^0.11.10",
     "tailwindcss": "^3.4.4"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
+    "@testing-library/dom": "^10.2.0",
+    "@testing-library/jest-dom": "^6.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
